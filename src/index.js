@@ -6,6 +6,8 @@ import RootReducer from './store/reducers'
 import { Provider } from 'react-redux' //bridge between react and redux
 import { createStore, applyMiddleware, compose } from 'redux'
 import { BrowserRouter } from 'react-router-dom'
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+
 const root = ReactDOM.createRoot(document.getElementById('root'))
 const EhnaceCompose = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = EhnaceCompose(applyMiddleware(thunk))(createStore)
