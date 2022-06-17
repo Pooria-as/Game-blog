@@ -1,9 +1,12 @@
-import React from 'react'
-
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import GameAction from '../store/actions/GameAction'
 const Home = () => {
-  return (
-    <div>Home</div>
-  )
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(GameAction())
+  }, [])
+  return <div>Home</div>
 }
 
 export default Home
