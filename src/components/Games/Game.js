@@ -19,6 +19,9 @@ const GameStyle = styled(motion.div)`
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 0.4rem;
     cursor: pointer;
+    h4,h6{
+        padding:0.5rem;
+    }
   img {
     width: 100%;
     height: 50vh;

@@ -32,6 +32,42 @@ const Home = () => {
           </Spiner>
         )}
       </Games>
+      <h3 style={{'textAlign':'center'}}>Popular Games</h3>
+      <Games>
+        {games.popular.length != 0 ? (
+          games.popular.map(({ id, name, released, background_image }) => (
+            <Game
+              key={id}
+              id={id}
+              name={name}
+              released={released}
+              img={background_image}
+            />
+          ))
+        ) : (
+          <Spiner>
+            <Circles color='#00BFFF' height={80} width={80} />
+          </Spiner>
+        )}
+      </Games>
+      <h3 style={{'textAlign':'center'}}>New Games</h3>
+      <Games>
+        {games.newgames.length != 0 ? (
+          games.newgames.map(({ id, name, released, background_image }) => (
+            <Game
+              key={id}
+              id={id}
+              name={name}
+              released={released}
+              img={background_image}
+            />
+          ))
+        ) : (
+          <Spiner>
+            <Circles color='#00BFFF' height={80} width={80} />
+          </Spiner>
+        )}
+      </Games>
     </div>
   )
 }
@@ -47,9 +83,10 @@ const Games = styled(motion.div)`
 
 const Spiner = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  height: 100%;
+
   
 `
 
