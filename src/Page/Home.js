@@ -86,8 +86,6 @@ const Spiner = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-
-  
 `
 
 export default Home

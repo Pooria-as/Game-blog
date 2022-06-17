@@ -31,3 +31,6 @@ const nextYear = `${currentYear + 1}-${currentMonth}-${currentDay}`
 export const POPULAR_GAMES_DATA = `${POPULAR_GAMES_URL}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`
 export const UPCOMING_GAMES = `${POPULAR_GAMES_URL}&dates=${currentDate},${nextYear}&ordering=-added&page_size=10`
 export const NEW_GAMES = `${POPULAR_GAMES_URL}&dates=${lastYear},${currentDate}&ordering=-released&page_size=10`
+
+export const GAME_DETAIL_URL = id =>
+  `https://api.rawg.io/api/games/${id}?key=${REACT_APP_API_KEY}`
