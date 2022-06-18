@@ -7,10 +7,10 @@ const GlobalStyles = createGlobalStyle`
     }
     body{
         font-family: 'Anton', sans-serif;
-        font-family: 'Gentium Plus', serif;
+        /* font-family: 'Gentium Plus', serif;
         font-family: 'Macondo', cursive;
         font-family: 'Square Peg', cursive;
-        font-family: 'Water Brush', cursive;
+        font-family: 'Water Brush', cursive; */
     }
     html {
     overflow: auto;
@@ -23,7 +23,7 @@ div {
 }
 
 body::-webkit-scrollbar {
-    width: 8px;
+    width: 15px;
 }
 
 body.thin::-webkit-scrollbar {

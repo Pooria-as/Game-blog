@@ -1,20 +1,23 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Game from '../components/Games/Game'
 import GameAction from '../store/actions/GameAction'
 import { Circles } from 'react-loader-spinner'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
+import Detial from '../components/Games/Detial'
 const Home = () => {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(GameAction())
-  }, [])
+  }, [dispatch])
   const games = useSelector(state => state.Games)
-  console.log()
+  console.log(games)
   return (
     <div>
-      <h3 style={{'textAlign':'center'}}>UpComing Games</h3>
+      <Detial />
+
+      <h3 style={{ textAlign: 'center' }}>UpComing Games</h3>
       <Games>
         {games.upcomming.length != 0 ? (
           games.upcomming.map(({ id, name, released, background_image }) => (
@@ -32,7 +35,7 @@ const Home = () => {
           </Spiner>
         )}
       </Games>
-      <h3 style={{'textAlign':'center'}}>Popular Games</h3>
+      <h3 style={{ textAlign: 'center' }}>Popular Games</h3>
       <Games>
         {games.popular.length != 0 ? (
           games.popular.map(({ id, name, released, background_image }) => (
@@ -50,7 +53,7 @@ const Home = () => {
           </Spiner>
         )}
       </Games>
-      <h3 style={{'textAlign':'center'}}>New Games</h3>
+      <h3 style={{ textAlign: 'center' }}>New Games</h3>
       <Games>
         {games.newgames.length != 0 ? (
           games.newgames.map(({ id, name, released, background_image }) => (
@@ -71,8 +74,6 @@ const Home = () => {
     </div>
   )
 }
-
-
 
 const Games = styled(motion.div)`
   padding: 2rem 3rem;

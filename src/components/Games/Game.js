@@ -9,7 +9,7 @@ const Game = ({ id, name, released, img }) => {
   const game = useSelector(state => state.Detail)
   const GetGameData = id => {
     dispatch(GameDetailAction(id))
-
+    console.log(game.Game.id)
   }
   return (
     <GameStyle onClick={() => GetGameData(id)}>
